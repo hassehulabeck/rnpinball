@@ -8,6 +8,7 @@ import {
     Pressable,
 } from "react-native";
 import Cart from "./Cart";
+import Player from "./Player";
 
 export default function App() {
     const [isLoading, setLoading] = useState(true);
@@ -36,15 +37,11 @@ export default function App() {
                     data={data}
                     keyExtractor={(item, index) => item.player_id}
                     renderItem={({ item, index }) => (
-                        <Pressable
-                            onPress={() => onPressButton(index)}
-                            underlayColor="red"
-                        >
-                            <Text style={styles.item} id={index}>
-                                {index + 1}: {item.first_name} {item.last_name}{" "}
-                                ({item.wppr_points})
-                            </Text>
-                        </Pressable>
+                        <Player
+                            touchad={onPressButton}
+                            player={item}
+                            styles={styles}
+                        ></Player>
                     )}
                 />
             )}
