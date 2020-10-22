@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-    ActivityIndicator,
-    StyleSheet,
-    FlatList,
-    Text,
-    View,
-    Pressable,
-} from "react-native";
+import { ActivityIndicator, StyleSheet, FlatList, View } from "react-native";
 import Cart from "./Cart";
 import Player from "./Player";
 
@@ -24,6 +17,7 @@ export default function App() {
     }, []);
 
     const onPressButton = (index) => {
+        console.log(index);
         setCart((cart) => [...cart, data[index]]);
     };
 
@@ -40,7 +34,7 @@ export default function App() {
                         <Player
                             touchad={onPressButton}
                             player={item}
-                            styles={styles}
+                            index={index}
                         ></Player>
                     )}
                 />
