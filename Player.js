@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Text, Pressable, StyleSheet } from "react-native";
+import {
+    Text,
+    Pressable,
+    StyleSheet,
+    RecyclerViewBackedScrollViewComponent,
+} from "react-native";
 
 const Player = (props) => {
     const [pressed, togglePressed] = useState(false);
@@ -22,7 +27,7 @@ const Player = (props) => {
         );
     } else {
         return (
-            <Text style={styles.item} id={props.index}>
+            <Text style={styles.depressed} id={props.index}>
                 {props.index + 1}: {props.player.first_name}{" "}
                 {props.player.last_name} (
                 {Number(props.player.wppr_points).toFixed(2)})
@@ -38,5 +43,12 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 18,
         height: 44,
+    },
+    depressed: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
+        backgroundColor: "#477",
+        fontWeight: 700,
     },
 });

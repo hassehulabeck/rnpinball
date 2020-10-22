@@ -1,0 +1,29 @@
+Regler
+======
+Välj fem spelare för max 1500 whoppers.
+
+Poäng delas ut enligt följande i både main och classic:
+
+Vinnare 100p
+Final   80p
+Semi    65p
+Kvart   50p
+Åttondel 20p
+Missat slutspel -10p
+
+Todo
+====
+- Login
+- Databas
+- Toggla köp
+- Submitknapp(?) för att bekräfta köp
+- Rankinglista
+- Resultatinmatning
+
+Skärmar
+=======
+Welcome
+Login
+Shop
+Home (your team, points)
+Resultatinmatning
