@@ -14,6 +14,7 @@ export default function App() {
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
     const [whopperCeiling, setWhopperCeiling] = useState(1500);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         fetch("https://www.hulabeck.se/html/temp/swedishIFPAranking.json")
@@ -22,6 +23,15 @@ export default function App() {
             .catch((error) => console.error(error))
             .finally(() => setLoading(false));
     }, []);
+
+    useEffect(() => {
+        let total = cart.reduce(
+            (prevValue, currentValue) =>
+                prevValue + Number(currentValue.wppr_points),
+            0
+        );
+        setTotal(total);
+    }, [cart]);
 
     const buy = (index) => {
         setCart((cart) => [...cart, data[index]]);
@@ -34,7 +44,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <Cart cart={cart} />
+            <Cart cart={cart} total={total} />
             {isLoading ? (
                 <ActivityIndicator />
             ) : (
@@ -47,6 +57,7 @@ export default function App() {
                             toSell={sell}
                             player={item}
                             index={index}
+                            total={total}
                             ceiling={whopperCeiling}
                         ></Player>
                     )}

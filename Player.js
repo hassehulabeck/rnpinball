@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-    Text,
-    Pressable,
-    StyleSheet,
-    RecyclerViewBackedScrollViewComponent,
-} from "react-native";
+import { Text, Pressable, StyleSheet } from "react-native";
 
 const Player = (props) => {
     const [pressed, togglePressed] = useState(false);
@@ -48,12 +43,12 @@ const styles = StyleSheet.create({
     item: {
         padding: 10,
         backgroundColor: "#eed",
-        marginVertical: "0.2em",
+        marginVertical: 3,
         fontSize: 18,
         height: 44,
     },
     depressed: {
         backgroundColor: "#477",
-        fontWeight: 700,
+        fontWeight: "700",
     },
 });
