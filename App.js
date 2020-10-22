@@ -13,6 +13,7 @@ export default function App() {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
+    const [whopperCeiling, setWhopperCeiling] = useState(1500);
 
     useEffect(() => {
         fetch("https://www.hulabeck.se/html/temp/swedishIFPAranking.json")
@@ -46,6 +47,7 @@ export default function App() {
                             toSell={sell}
                             player={item}
                             index={index}
+                            ceiling={whopperCeiling}
                         ></Player>
                     )}
                 />
