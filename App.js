@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, StyleSheet, FlatList, View } from "react-native";
+import {
+    ActivityIndicator,
+    StyleSheet,
+    FlatList,
+    View,
+    TouchableHighlightComponent,
+} from "react-native";
 import Cart from "./Cart";
 import Player from "./Player";
 
@@ -16,9 +22,13 @@ export default function App() {
             .finally(() => setLoading(false));
     }, []);
 
-    const onPressButton = (index) => {
-        console.log(index);
+    const buy = (index) => {
         setCart((cart) => [...cart, data[index]]);
+    };
+
+    const sell = (id) => {
+        console.log(id);
+        setCart((cart) => cart.filter((player) => player.player_id !== id));
     };
 
     return (
@@ -29,10 +39,11 @@ export default function App() {
             ) : (
                 <FlatList
                     data={data}
-                    keyExtractor={(item, index) => item.player_id}
+                    keyExtractor={(item) => item.player_id}
                     renderItem={({ item, index }) => (
                         <Player
-                            touchad={onPressButton}
+                            toBuy={buy}
+                            toSell={sell}
                             player={item}
                             index={index}
                         ></Player>
@@ -47,10 +58,5 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 22,
-    },
-    item: {
-        padding: 10,
-        fontSize: 18,
-        height: 44,
     },
 });

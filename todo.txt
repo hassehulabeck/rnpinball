@@ -15,10 +15,11 @@ Todo
 ====
 - Login
 - Databas
-- Toggla köp
+- Toggla köp [FIXAT]
 - Submitknapp(?) för att bekräfta köp
 - Rankinglista
 - Resultatinmatning
+- Dimma de spelare man inte har råd med.
 
 Skärmar
 =======

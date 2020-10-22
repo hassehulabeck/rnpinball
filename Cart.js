@@ -6,14 +6,13 @@ const Cart = (props) => {
     return (
         <div>
             <h1>Varukorg</h1>
-            {props.cart.length}
-            <section>
+            {/* <section>
                 {props.cart.map((player, index) => (
                     <article key={index}>
                         {player.first_name} {player.last_name}
                     </article>
                 ))}
-            </section>
+            </section> */}
             <Total cart={props.cart} />
         </div>
     );
