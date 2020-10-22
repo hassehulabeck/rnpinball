@@ -15,7 +15,8 @@ const Player = (props) => {
             <Pressable onPress={touch}>
                 <Text style={styles.item} id={props.index}>
                     {props.index + 1}: {props.player.first_name}{" "}
-                    {props.player.last_name} ({props.player.wppr_points})
+                    {props.player.last_name} (
+                    {Number(props.player.wppr_points).toFixed(2)})
                 </Text>
             </Pressable>
         );
@@ -23,7 +24,8 @@ const Player = (props) => {
         return (
             <Text style={styles.item} id={props.index}>
                 {props.index + 1}: {props.player.first_name}{" "}
-                {props.player.last_name} ({props.player.wppr_points})
+                {props.player.last_name} (
+                {Number(props.player.wppr_points).toFixed(2)})
             </Text>
         );
     }

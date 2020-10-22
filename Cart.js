@@ -25,7 +25,7 @@ const Total = (props) => {
             prevValue + Number(currentValue.wppr_points),
         0
     );
-    return <p>Totalt värde: {total}</p>;
+    return <p>Totalt värde: {Number(total).toFixed(2)}</p>;
 };
 
 export default Cart;
