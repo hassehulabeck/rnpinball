@@ -38,12 +38,16 @@ export default function Shop() {
 
     return (
         <View style={styles.container}>
-            <Cart cart={cart} total={total} />
             {isLoading ? (
                 <ActivityIndicator />
             ) : (
                 <FlatList
+                    ListHeaderComponent={
+                        <Cart cart={cart} total={total} styles={styles.top} />
+                    }
+                    stickyHeaderIndices={[0]}
                     data={data}
+                    extraData={total}
                     keyExtractor={(item) => item.player_id}
                     renderItem={({ item, index }) => (
                         <Player
@@ -65,5 +69,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 22,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    top: {
+        flex: 1,
+        justifyContent: "center",
+        height: 50,
+        alignItems: "center",
     },
 });

@@ -15,16 +15,25 @@ const Player = (props) => {
     };
 
     if (!pressed) {
-        let disableStyle =
-            props.total + props.player.wppr_points > props.ceiling
-                ? "styles.tooPricy"
-                : "";
+        let disableStyle = false;
+        if (
+            props.total + Number(props.player.wppr_points) >
+            Number(props.ceiling)
+        ) {
+            disableStyle = true;
+        }
         return (
             <Pressable onPress={touch}>
-                <Text style={[styles.item, disableStyle]} id={props.index}>
+                <Text
+                    style={[
+                        styles.item,
+                        disableStyle ? styles.tooPricy : styles.other,
+                    ]}
+                    id={props.index}
+                >
                     {props.index + 1}: {props.player.first_name}{" "}
                     {props.player.last_name} (
-                    {Number(props.player.wppr_points).toFixed(2)})
+                    {Number(props.player.wppr_points).toFixed(2)}){disableStyle}
                 </Text>
             </Pressable>
         );
@@ -52,10 +61,14 @@ const styles = StyleSheet.create({
         height: 44,
     },
     depressed: {
-        backgroundColor: "#477",
-        fontWeight: "700",
+        backgroundColor: "lightgreen",
+        fontWeight: "400",
     },
     tooPricy: {
-        backgroundColor: "blue",
+        backgroundColor: "#888",
+        color: "#ccc",
+    },
+    other: {
+        color: "#111",
     },
 });
