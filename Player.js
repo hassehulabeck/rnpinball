@@ -15,9 +15,13 @@ const Player = (props) => {
     };
 
     if (!pressed) {
+        let disableStyle =
+            props.total + props.player.wppr_points > props.ceiling
+                ? "styles.tooPricy"
+                : "";
         return (
             <Pressable onPress={touch}>
-                <Text style={styles.item} id={props.index}>
+                <Text style={[styles.item, disableStyle]} id={props.index}>
                     {props.index + 1}: {props.player.first_name}{" "}
                     {props.player.last_name} (
                     {Number(props.player.wppr_points).toFixed(2)})
@@ -50,5 +54,8 @@ const styles = StyleSheet.create({
     depressed: {
         backgroundColor: "#477",
         fontWeight: "700",
+    },
+    tooPricy: {
+        backgroundColor: "blue",
     },
 });
