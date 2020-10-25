@@ -42,9 +42,7 @@ export default function Shop() {
                 <ActivityIndicator />
             ) : (
                 <FlatList
-                    ListHeaderComponent={
-                        <Cart cart={cart} total={total} styles={styles.top} />
-                    }
+                    ListHeaderComponent={<Cart cart={cart} total={total} />}
                     stickyHeaderIndices={[0]}
                     data={data}
                     extraData={total}
@@ -70,12 +68,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 22,
         justifyContent: "center",
-        alignItems: "center",
-    },
-    top: {
-        flex: 1,
-        justifyContent: "center",
-        height: 50,
         alignItems: "center",
     },
 });

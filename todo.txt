@@ -1,6 +1,6 @@
 Regler
 ======
-Välj fem spelare för max 1500 whoppers.
+Välj så många spelare du har råd med (max 1500 whoppers.) Max=7 och min=2.
 
 Poäng delas ut enligt följande i både main och classic:
 
@@ -19,7 +19,7 @@ Todo
 - Submitknapp(?) för att bekräfta köp
 - Rankinglista
 - Resultatinmatning
-- Dimma de spelare man inte har råd med.
+- Dimma de spelare man inte har råd med. [FIXAT]
 
 Skärmar
 =======
