@@ -1,12 +1,17 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { PlayerContext } from "./PlayerContext";
 
-const Cart = (props) => {
+const Cart = () => {
     return (
-        <View style={styles.top}>
-            <Text>Varukorg</Text>
-            <Text>Totalt: {Number(props.total).toFixed(2)} </Text>
-        </View>
+        <PlayerContext.Consumer>
+            {(context) => (
+                <View style={styles.top}>
+                    <Text>Varukorg</Text>
+                    <Text>Totalt: {Number(context.total).toFixed(2)} </Text>
+                </View>
+            )}
+        </PlayerContext.Consumer>
     );
 };
 
