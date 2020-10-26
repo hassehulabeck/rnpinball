@@ -1,15 +1,14 @@
 Regler
 ======
-Välj så många spelare du har råd med (max 1500 whoppers.) Max=7 och min=2.
-
+Välj fyra spelare du har råd med (max 1500 whoppers.) 
 Poäng delas ut enligt följande i både main och classic:
 
 Vinnare 100p
-Final   80p
-Semi    65p
-Kvart   50p
+Final   70p
+Semi    55p
+Kvart   30p
 Åttondel 20p
-Missat slutspel -10p
+Missat slutspel -30p
 
 Todo
 ====
@@ -20,6 +19,7 @@ Todo
 - Rankinglista
 - Resultatinmatning
 - Dimma de spelare man inte har råd med. [FIXAT]
+- Visa de spelare som finns i varukorgen, när man går in i shopen. [FIXAT]
 
 Skärmar
 =======

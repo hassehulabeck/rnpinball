@@ -19,6 +19,7 @@ export default function Shop() {
                                     total={context.total}
                                 />
                             }
+                            ListHeaderComponentStyle={styles.header}
                             stickyHeaderIndices={[0]}
                             data={context.data}
                             extraData={context.total}
@@ -27,6 +28,7 @@ export default function Shop() {
                                 <Player
                                     toBuy={context.buy}
                                     toSell={context.sell}
+                                    cart={context.cart}
                                     player={item}
                                     index={index}
                                     total={context.total}
@@ -47,5 +49,9 @@ const styles = StyleSheet.create({
         paddingTop: 22,
         justifyContent: "center",
         alignItems: "center",
+    },
+    header: {
+        height: 200,
+        paddingBottom: 6,
     },
 });

@@ -14,6 +14,11 @@ const Player = (props) => {
         togglePressed(press);
     };
 
+    // Check if player is in cart, then set Player to pressed.
+    if (props.cart.includes(props.player) && !pressed) {
+        togglePressed(true);
+    }
+
     if (!pressed) {
         let disableStyle = false;
         if (
